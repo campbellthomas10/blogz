@@ -69,12 +69,12 @@ def new_post():
                 post_body=post_body)
 
 
-        return render_template('newpost.html',
-            title='New Post',
-            title_error=title_error,
-            body_error=body_error,
-            post_title=post_title,
-            post_body=post_body)
+    return render_template('newpost.html',
+        title='New Post',
+        title_error=title_error,
+        body_error=body_error,
+        post_title=post_title,
+        post_body=post_body)
 
 
 if __name__ == '__main__':

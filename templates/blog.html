@@ -6,11 +6,11 @@
 <hr />
 
 {% if posts|length == 0 %}
-    <p>No Posts!</p>
+    <p>No Posts! Create the first one <a href='./newpost'>here!</a></p>
 {% else %}
     {% for post in posts %}
     <br />
-    <h2>{{post.title}}</h2>
+    <h2><a href='./post?title={{post.title}}'>{{post.title}}</a></h2>
     <p>{{post.body}}</p>
     <br />
     <hr />
