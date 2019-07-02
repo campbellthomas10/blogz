@@ -5,7 +5,16 @@
 <h1>Build A Blog</h1>
 <hr />
 
-{% if blog|length == 0 %}
-
+{% if posts|length == 0 %}
+    <p>No Posts!</p>
+{% else %}
+    {% for post in posts %}
+    <br />
+    <h2>{{post.title}}</h2>
+    <p>{{post.body}}</p>
+    <br />
+    <hr />
+    {% endfor %}
+{% endif %}
 
 {% endblock %}
