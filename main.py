@@ -17,6 +17,9 @@ class Blog(db.Model):
         self.title = title
         self.body = body
 
+    def __repr__(self):
+        return "<Body: " + self.body +">"
+
 @app.route('/blog')
 def index():
 
@@ -75,6 +78,15 @@ def new_post():
         body_error=body_error,
         post_title=post_title,
         post_body=post_body)
+
+@app.route('/post', methods=['GET'])
+def post():
+    title = request.args.get('title')
+
+    thing = Blog.query.filter_by(title=title).first()
+    post = thing.body
+
+    return render_template('post.html',title=title, body=post)
 
 
 if __name__ == '__main__':
