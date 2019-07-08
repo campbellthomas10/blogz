@@ -61,7 +61,7 @@ def new_post():
             post = Blog(post_title,post_body)
             db.session.add(post)
             db.session.commit()
-            return redirect('/blog')
+            return redirect('./post?title={}'.format(post.title))
         
         else:
             return render_template('newpost.html',
@@ -79,6 +79,8 @@ def new_post():
         post_title=post_title,
         post_body=post_body)
 
+
+#Indiviual page
 @app.route('/post', methods=['GET'])
 def post():
     title = request.args.get('title')
