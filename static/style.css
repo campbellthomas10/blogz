@@ -1,0 +1,30 @@
+.error {
+    color: red;
+    font-size: 9pt;
+}
+h1 {
+    text-align: center;
+    color: white;
+    margin: 5px;
+}
+form {
+    background-color: #eee;
+    color: darkslateblue;
+    border-radius: 10pt;
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+}
+body{
+    font-family: Verdana, sans-seriff;
+    background-color: darkslateblue;
+    color: black;
+}
+
+.main {
+    background-color: #eee;
+    border-radius: 10pt;
+    padding: 10px;
+    margin: auto auto;
+    color: black;
+}

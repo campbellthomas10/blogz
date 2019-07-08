@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>{{title}}</title>
+        <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='style.css')}}">
     </head>
+
     <body>
+        <div class='main'>
         <a href='./blog'>Main Page</a>
         <a href='./newpost'>New Post</a>
+        </div>
         {% block content %}
         {% endblock %}
 
