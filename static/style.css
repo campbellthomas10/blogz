@@ -18,7 +18,7 @@ form {
 body{
     font-family: Verdana, sans-seriff;
     background-color: darkslateblue;
-    color: black;
+    color: darkslateblue;
 }
 
 .main {
@@ -26,5 +26,15 @@ body{
     border-radius: 10pt;
     padding: 10px;
     margin: auto auto;
-    color: black;
+    color: darkslateblue;
+}
+
+.topmain {
+    background-color: #eee;
+    border-radius: 10pt;
+    padding: 10px;
+    width: 340px;
+    margin: auto auto;
+    text-align: center;
+    color: darkslateblue;
 }
