@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <body>
+        <div class="main">
+
+        <h1>Register</h1>
+        <form action="/register" method="POST">
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="email">Email:</label>
+                    </td>
+                    <td>
+                        <input type="email"  
+                        name="email" 
+                        value='{{email}}'
+                        required  />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password"  
+                        name="password" 
+                        pattern=[a-zA-z0-9]{3,20} required
+                        title="Must be between 3 - 20 characters with no spaces." required /> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="verified">Verify Password:</label>
+                    </td>
+                    <td>
+                        <input type="password"  
+                        name="verified" 
+                        pattern=[a-zA-z0-9]{3,20} required
+                        title="Must be between 3 - 20 characters with no spaces." required/>
+                    </td>
+                </tr>
+
+ 
+            </table>
+
+            <input type="submit" value="Register" />
+        </form>
+
+    </div>
+    </body>
+{% endblock %}
