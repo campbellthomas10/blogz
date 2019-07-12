@@ -2,6 +2,19 @@
     color: red;
     font-size: 9pt;
 }
+.baselogin {
+    color: white;
+}
+.login {
+    color: greenyellow;
+    font-size: 9pt;
+    float: right;
+}
+.owner {
+    font-size: 7pt;
+}
+
+
 h1 {
     text-align: center;
     color: white;

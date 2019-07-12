@@ -1,13 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <body>
-        <div class="main">
 
+    <body>
         <h1>Register</h1>
+        <hr />
+        <div class="main">
         <form action="/register" method="POST">
 
             <table>
+                <tr>
+                    <td>
+                        <label for="username">Username:</label>
+                    </td>
+                    <td>
+                        <input type="text"  
+                        name="username" 
+                        pattern=[a-zA-z0-9]{3,20} required
+                        title="Must be between 3 - 20 characters with no spaces." required /> 
+                    </td>
+                </tr>
+
                 <tr>
                     <td>
                         <label for="email">Email:</label>
@@ -19,6 +32,7 @@
                         required  />
                     </td>
                 </tr>
+
                 <tr>
                     <td>
                         <label for="password">Password:</label>
@@ -50,5 +64,6 @@
         </form>
 
     </div>
+    <hr />
     </body>
 {% endblock %}

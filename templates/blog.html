@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Build A Blog</h1>
+<h1>Blogz</h1>
 <hr />
 
 {% if posts|length == 0 %}
@@ -13,10 +13,15 @@
     {% for post in posts %}
     <div class='main'>
     <br />
-    <h2><a href='./post?id={{post.id}}'>{{post.title}}</a></h2>
+    <h2><a href='./post?id={{post.id}}&user={{post.owner_id}}'>{{post.title}}</a></h2>
     <p>{{post.body}}</p>
+    {% for user in users %}
+        {% if user.id == post.owner_id %}
+            <p class='owner'>Author: <a href='/user?user_id={{post.owner_id}}'>{{user.username}}</a></p>
+        {% endif %}
+    {% endfor %}
     <br />
-</div>
+    </div>
     <hr />
     {% endfor %}
 {% endif %}
