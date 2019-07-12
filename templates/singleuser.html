@@ -4,15 +4,20 @@
 
 <h1>{{owner}}'s Posts</h1>
 <hr />
-
-{% for post in posts %}
-<div class='main'>
-<br />
-<h2><a href='./post?id={{post.id}}&user={{post.owner_id}}'>{{post.title}}</a></h2>
-<p>{{post.body}}</p>
-<br />
-</div>
-<hr />
-{% endfor %}
+{% if posts|length == 0 %}
+    <div class='topmain'>
+    <p>{{owner}} has no posts!</a></p>
+    </div>
+{% else %}
+    {% for post in posts %}
+    <div class='main'>
+    <br />
+    <h3><a href='./post?id={{post.id}}&user={{post.owner_id}}'>{{post.title}}</a></h3>
+    <p>{{post.body}}</p>
+    <br />
+    </div>
+    <hr />
+    {% endfor %}
+{% endif %}
 
 {% endblock %}

@@ -13,11 +13,11 @@
     {% for post in posts %}
     <div class='main'>
     <br />
-    <h2><a href='./post?id={{post.id}}&user={{post.owner_id}}'>{{post.title}}</a></h2>
+    <h3><a href='./post?id={{post.id}}&user={{post.owner_id}}'>{{post.title}}</a></h3>
     <p>{{post.body}}</p>
     {% for user in users %}
         {% if user.id == post.owner_id %}
-            <p class='owner'>Author: <a href='/user?user_id={{post.owner_id}}'>{{user.username}}</a></p>
+            <p class='owner'><em>Author: <a href='/user?user_id={{post.owner_id}}'>{{user.username}}</a></em></p>
         {% endif %}
     {% endfor %}
     <br />

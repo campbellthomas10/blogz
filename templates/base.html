@@ -9,13 +9,14 @@
     <body>
         {% if session %}
         <p class='login'>Logged in: {{user}}</p>
-        <div class='topmain'>
-        <a href='/'>Main Page</a> | 
+        <div class='topmain nav'>
+        <a href='/'>All Posts</a> | 
         <a href='/newpost'>New Post</a> | 
-        <a href='/logout'>Log Out</a>
+        <a href='/logout'>Log Out</a> |
+        <a href='/allusers'>All Users</a>
         </div>
         {% else %}
-        <div class='topmain'>
+        <div class='topmain nav'>
         <a href='/login'>Login</a> | 
         <a href='/register'>Register</a>
         </div>

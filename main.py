@@ -92,8 +92,7 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and user.password == password:
             session['user'] = username
-            flash('Logged in!', 'login')
-            return redirect('/newpost')
+            return redirect('/allusers')
         else:
             flash("Incorrect password, or user doesn't exist.", 'error')
     return render_template('login.html', title='Login')
@@ -129,7 +128,7 @@ def register():
                 db.session.add(new_user)
                 db.session.commit()
                 session['user'] = username
-                return redirect('/newpost')
+                return redirect('/allusers')
             flash('Email already in use!', 'error')
             return render_template('register.html', title='Register')
     return render_template('register.html',title='Register')
@@ -138,7 +137,7 @@ def register():
 @app.route('/logout')
 def logout():
     del session['user']
-    return redirect('/')
+    return redirect('/allusers')
 
 
 #Displays the main blog page with all authors (as of now)
@@ -201,12 +200,19 @@ def post():
     post = Blog.query.filter_by(id=id).first()
     return render_template('post.html',title=post.title, user=session['user'], body=post.body, owner=owner.username)
 
+
+#Author's posts page
 @app.route('/user', methods=['GET'])
 def user():
     user_id = request.args.get('user_id')
     posts = Blog.query.filter_by(owner_id=user_id).all()
     user = User.query.filter_by(id=user_id).first()
     return render_template('singleuser.html', title= user.username + "'s Posts", user=session['user'], posts=posts, owner=user.username)
+
+@app.route('/allusers', methods=['GET'])
+def allusers():
+    users = User.query.all()
+    return render_template('users.html', title="All Users", user=session['user'], users=users)
 
 
 
